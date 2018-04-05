@@ -7,16 +7,16 @@ import (
 
 // Zero width non-printing characters
 const (
-	zwsp = '\u200B'
-	zwnj = '\u200C'
-	zwj = '\u200D'
-	zwnb = '\uFEFF'
+	zwsp = '\u200B' // 1
+	zwnj = '\u200C' // 0
+	zwj  = '\u200D' // letter
+	zwnb = '\uFEFF' // word
 )
 
 // toBits converts each character in the string to base 2 form
 func toBits(s string) []string {
 	var bits []string
-	for _, c := range s{
+	for _, c := range s {
 		bits = append(bits, fmt.Sprintf("%b", c))
 	}
 
@@ -28,7 +28,7 @@ func toBits(s string) []string {
 // 0 -> zwnj
 func convertLetter(s string) string {
 	var sb strings.Builder
-	for _, c := range s{
+	for _, c := range s {
 		if c == '0' {
 			sb.WriteRune(zwnj)
 			continue
@@ -44,7 +44,7 @@ func convertLetter(s string) string {
 func convertWord(s string) string {
 	bits := toBits(s)
 	var zws []string
-	for _, b := range bits{
+	for _, b := range bits {
 		zws = append(zws, convertLetter(b))
 	}
 
@@ -61,7 +61,7 @@ func toZeroWidth(s string) string {
 	words := strings.Split(s, " ")
 
 	var zwWords []string
-	for _, w := range words{
+	for _, w := range words {
 		zwWords = append(zwWords, convertWord(w))
 	}
 
@@ -73,14 +73,14 @@ func toZeroWidth(s string) string {
 func Embed(data, key string) string {
 	zwKey := toZeroWidth(key)
 	var zwRKey []rune
-	for _, c := range zwKey{
+	for _, c := range zwKey {
 		zwRKey = append(zwRKey, c)
 	}
 
 	var t int
 	var embed []rune
 
-	for _, c := range data{
+	for _, c := range data {
 		embed = append(embed, c)
 		if t < len(zwRKey) {
 			embed = append(embed, zwRKey[t])
@@ -94,6 +94,3 @@ func Embed(data, key string) string {
 
 	return string(embed)
 }
-
-
-

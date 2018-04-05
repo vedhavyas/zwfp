@@ -6,7 +6,7 @@ import (
 )
 
 func Test_toBits(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		s string
 		r []string
 	}{
@@ -28,7 +28,7 @@ func Test_toBits(t *testing.T) {
 		},
 	}
 
-	for _, c := range tests{
+	for _, c := range tests {
 		r := toBits(c.s)
 		if !reflect.DeepEqual(c.r, r) {
 			t.Fatalf("expected %v bits bit got %v", c.r, r)
@@ -36,8 +36,8 @@ func Test_toBits(t *testing.T) {
 	}
 }
 
-func test(t *testing.T, tests []struct{ s, r string }, fn func(s string) string)  {
-	for _, c := range tests{
+func test(t *testing.T, tests []struct{ s, r string }, fn func(s string) string) {
+	for _, c := range tests {
 		r := fn(c.s)
 		if r != c.r {
 			t.Fatalf("expected %s but got %s", c.r, r)
@@ -46,7 +46,7 @@ func test(t *testing.T, tests []struct{ s, r string }, fn func(s string) string)
 }
 
 func Test_convertLetter(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		s string
 		r string
 	}{
@@ -65,7 +65,7 @@ func Test_convertLetter(t *testing.T) {
 }
 
 func Test_convertWord(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		s string
 		r string
 	}{
@@ -84,7 +84,7 @@ func Test_convertWord(t *testing.T) {
 }
 
 func Test_toZeroWidth(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		s string
 		r string
 	}{
@@ -108,7 +108,7 @@ func Test_toZeroWidth(t *testing.T) {
 }
 
 func TestEmbed(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		s string
 		k string
 		r string
@@ -150,7 +150,7 @@ func TestEmbed(t *testing.T) {
 		},
 	}
 
-	for _, c := range tests{
+	for _, c := range tests {
 		r := Embed(c.s, c.k)
 		if r != c.r {
 			t.Fatalf("expected %s but got %s", c.r, r)
