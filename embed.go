@@ -80,12 +80,19 @@ func Embed(data, key string) string {
 	var t int
 	var embed []rune
 
-	for _, c := range data {
+	for i, c := range data {
+		if i == 0 {
+			embed = append(embed, c)
+		}
+
 		if t < len(zwRKey) {
 			embed = append(embed, zwRKey[t])
 			t++
 		}
-		embed = append(embed, c)
+
+		if i != 0 {
+			embed = append(embed, c)
+		}
 	}
 
 	if t < len(zwRKey) {
