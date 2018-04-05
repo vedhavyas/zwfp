@@ -16,9 +16,10 @@ func main() {
 	case 2:
 		pt, key := zwfp.Extract(os.Args[1])
 		fmt.Println("Plain Text:", pt)
-		fmt.Println("Embed Key:", key)
+		fmt.Println("Secret Key:", key)
 		return
 	default:
+		fmt.Println(len(os.Args))
 		fmt.Println("Usage:")
 		fmt.Println("\t", os.Args[0], "PlainText Key")
 		fmt.Println("\t\t", "Embeds Key into PlainText")
