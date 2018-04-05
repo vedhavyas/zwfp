@@ -66,7 +66,6 @@ func constructKey(zws []rune) string {
 		default:
 			cl = append(cl, r)
 		}
-
 	}
 
 	if len(cl) > 0 {
