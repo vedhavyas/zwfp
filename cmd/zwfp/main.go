@@ -19,7 +19,6 @@ func main() {
 		fmt.Println("Secret Key:", key)
 		return
 	default:
-		fmt.Println(len(os.Args))
 		fmt.Println("Usage:")
 		fmt.Println("\t", os.Args[0], "PlainText Key")
 		fmt.Println("\t\t", "Embeds Key into PlainText")
