@@ -3,4 +3,4 @@ go:
  - "1.10.1"
 
 script:
- - go test $(shell go list ./... | grep -v '/vendor/') --cover
+ - go test $(go list ./... | grep -v '/vendor/') --cover
