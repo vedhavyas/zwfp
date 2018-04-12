@@ -11,7 +11,7 @@ ZWFP - Zero-width fingerprinting uses [Zero Width](https://en.wikipedia.org/wiki
 Inspiration for the project from [this article](https://medium.com/@umpox/be-careful-what-you-copy-invisibly-inserting-usernames-into-text-with-zero-width-characters-18b4e6f17b66) by [Tom](https://medium.com/@umpox)
 
 ## Demo
-![ZWFP Demo](https://media.giphy.com/media/1UN2yRCa8bGpJ4umXt/giphy.gif)
+[![ZWFP Demo](https://media.giphy.com/media/1UN2yRCa8bGpJ4umXt/giphy.gif)](https://youtu.be/3V6ohXMTP3Y)
 
 ## Getting Started
 
@@ -56,9 +56,10 @@ PRs, Issues, and Feedback are very welcome and appreciated.
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/vedhavyas/twothy/tags). 
 
-## Authors
+## Authors and Testers
 
 * **Vedhavyas Singareddi** - [Vedhavyas](https://github.com/vedhavyas)
+* **Anagha Todalbagi** - [Anagha](https://github.com/anagha-todalbagi)
 
 ## License
 
