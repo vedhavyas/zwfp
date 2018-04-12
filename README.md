@@ -11,7 +11,7 @@ ZWFP - Zero-width fingerprinting uses [Zero Width](https://en.wikipedia.org/wiki
 Inspiration for the project from [this article](https://medium.com/@umpox/be-careful-what-you-copy-invisibly-inserting-usernames-into-text-with-zero-width-characters-18b4e6f17b66) by [Tom](https://medium.com/@umpox)
 
 ## Demo
-![ZWFP Demo](https://j.gifs.com/yrnwx7.gif)
+![ZWFP Demo](https://media.giphy.com/media/1UN2yRCa8bGpJ4umXt/giphy.gif)
 
 ## Getting Started
 
