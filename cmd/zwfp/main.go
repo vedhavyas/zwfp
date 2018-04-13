@@ -23,8 +23,8 @@ func main() {
 		fmt.Println("\t", os.Args[0], "CoverText Payload")
 		fmt.Println("\t\t", "Embeds Payload into CoverText")
 		fmt.Println("")
-		fmt.Println("\t", os.Args[0], "StegoText")
-		fmt.Println("\t\t", "Extracts Payload from StegoText")
+		fmt.Println("\t", os.Args[0], "SteganoText")
+		fmt.Println("\t\t", "Extracts Payload from SteganoText")
 		os.Exit(1)
 	}
 

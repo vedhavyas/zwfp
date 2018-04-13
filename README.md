@@ -36,8 +36,8 @@ Usage:
          ./zwfp CoverText Payload
                  Embeds Payload into CoverText
 
-         ./zwfp StegoText
-                 Extracts Payload from StegoText
+         ./zwfp SteganoText
+                 Extracts Payload from SteganoText
 ```
 
 ## Built With
