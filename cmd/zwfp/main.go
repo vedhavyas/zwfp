@@ -15,13 +15,13 @@ func main() {
 		return
 	case 2:
 		pt, key := zwfp.Extract(os.Args[1])
-		fmt.Println("Plain Text:", pt)
+		fmt.Println("Cover Text:", pt)
 		fmt.Println("Payload:", key)
 		return
 	default:
 		fmt.Println("Usage:")
-		fmt.Println("\t", os.Args[0], "PlainText Payload")
-		fmt.Println("\t\t", "Embeds Payload into PlainText")
+		fmt.Println("\t", os.Args[0], "CoverText Payload")
+		fmt.Println("\t\t", "Embeds Payload into CoverText")
 		fmt.Println("")
 		fmt.Println("\t", os.Args[0], "StegoText")
 		fmt.Println("\t\t", "Extracts Payload from StegoText")

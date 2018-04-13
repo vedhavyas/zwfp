@@ -33,8 +33,8 @@ Once inside project' folder, simply run `go test ./...` to run the tests.
 
 ```bash
 Usage:
-         ./zwfp PlainText Payload
-                 Embeds Payload into PlainText
+         ./zwfp CoverText Payload
+                 Embeds Payload into CoverText
 
          ./zwfp StegoText
                  Extracts Payload from StegoText
