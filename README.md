@@ -43,9 +43,6 @@ Usage:
 ## Built With
 
 * [Go](https://golang.org/)
-* [Glide](https://glide.sh/) - Dependency Management
-* [HomeDir](https://github.com/mitchellh/go-homedir) - Used to get User's home directory
-* [Crypto](https://golang.org/x/crypto) - Used to get password from terminal securely
 
 ## Contributing
 
