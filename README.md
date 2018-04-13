@@ -33,12 +33,11 @@ Once inside project' folder, simply run `go test ./...` to run the tests.
 
 ```bash
 Usage:
-         ./zwfp PlainText Key
-                 Embeds Key into PlainText
+         ./zwfp PlainText Payload
+                 Embeds Payload into PlainText
 
-         ./zwfp EmbedText
-                 Extracts Key from EmbedText
-
+         ./zwfp StegoText
+                 Extracts Payload from StegoText
 ```
 
 ## Built With

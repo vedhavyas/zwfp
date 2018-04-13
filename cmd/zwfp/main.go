@@ -16,15 +16,15 @@ func main() {
 	case 2:
 		pt, key := zwfp.Extract(os.Args[1])
 		fmt.Println("Plain Text:", pt)
-		fmt.Println("Secret Key:", key)
+		fmt.Println("Payload:", key)
 		return
 	default:
 		fmt.Println("Usage:")
-		fmt.Println("\t", os.Args[0], "PlainText Key")
-		fmt.Println("\t\t", "Embeds Key into PlainText")
+		fmt.Println("\t", os.Args[0], "PlainText Payload")
+		fmt.Println("\t\t", "Embeds Payload into PlainText")
 		fmt.Println("")
-		fmt.Println("\t", os.Args[0], "EmbedText")
-		fmt.Println("\t\t", "Extracts Key from EmbedText")
+		fmt.Println("\t", os.Args[0], "StegoText")
+		fmt.Println("\t\t", "Extracts Payload from StegoText")
 		os.Exit(1)
 	}
 
