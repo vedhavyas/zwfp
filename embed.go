@@ -1,7 +1,9 @@
 package zwfp
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"strings"
 )
 
@@ -107,4 +109,79 @@ func Embed(data, key string) string {
 	}
 
 	return string(embed)
+}
+
+// Write embeds the key into stream Writer from Reader using zero-width characters
+func Write(w io.Writer, r io.Reader, key string) error {
+	zwKey := toZeroWidth(key)
+	var zwRKey []rune
+	for _, c := range zwKey {
+		zwRKey = append(zwRKey, c)
+	}
+
+	var t int
+	var err error
+	var c rune
+
+	i := 0
+	br := bufio.NewReader(r)
+	bw := bufio.NewWriter(w)
+	defer bw.Flush()
+	for {
+		c, _, err = br.ReadRune()
+		if err != nil {
+			break
+		}
+		if i == 0 {
+			_, err = bw.WriteRune(c)
+			if err != nil {
+				break
+			}
+		}
+
+		if t < len(zwRKey) {
+			_, err = bw.WriteRune(zwRKey[t])
+			if err != nil {
+				break
+			}
+			t++
+		}
+
+		if i != 0 {
+			_, err = bw.WriteRune(c)
+			if err != nil {
+				break
+			}
+		}
+		i++
+	}
+
+	if err == io.EOF {
+		err = nil
+	}
+
+	if t < len(zwRKey) {
+		if bw.Size() > 0 {
+			br.UnreadByte()
+			_, err = bw.WriteString(string(zwRKey[t:]))
+			if err != nil {
+				return err
+			}
+			c, _, err = br.ReadRune()
+			if err != nil {
+				return err
+			}
+			_, err = bw.WriteRune(c)
+			if err != nil {
+				return err
+			}
+		} else {
+			_, err = bw.WriteString(string(zwRKey[t:]))
+			if err != nil {
+				return err
+			}
+		}
+	}
+
+	return err
 }
